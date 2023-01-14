@@ -6,18 +6,24 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 04:55:01 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/12 03:42:16 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/14 17:42:10 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
-
+# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <pthread.h>
 # include <sys/time.h>
+
+# define TAKE_FORKS "\033[0;35m has taken a fork 🍴\033[0m"
+# define THINKING "\033[0;34m is thinking 🤔\033[0m"
+# define SLEEPING "\033[0;33m is sleeping 💤\033[0m"
+# define EATING "\033[0;32m is eating 🍽️\033[0m"
+# define DIED "\033[0;31m died 💀\033[0m"
 
 typedef struct s_philo
 {

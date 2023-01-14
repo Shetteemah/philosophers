@@ -6,7 +6,7 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:53:49 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/12 03:30:46 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/14 17:41:31 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,19 @@ int	ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] == s2[i] && s1[i])
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+// ft_putstr is a function that prints a string. It takes a string (str) as an
+// argument and returns the string.
+char	*ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (str);
 }
