@@ -6,7 +6,7 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:53:49 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/14 17:41:31 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/15 19:13:45 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ long int	ft_atoi(char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
+	if (str[i] != '\0')
+		return (0);
 	return (res * neg);
 }
 
@@ -45,6 +47,8 @@ int	ft_strnumeric(char *str)
 	int	i;
 
 	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		i++;
 	while (str[i])
 	{
 		if (str[i] == '-' || str[i] == '+')
