@@ -6,7 +6,7 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 02:51:22 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/14 17:40:48 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/16 10:14:42 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 // the mutex attributes are NULL, the default mutex attributes are used, if not,
 // the mutex attributes are used. The function returns 0 if the mutex is
 // initialized, and 1 if not.
-// The first fork is initialized with the last fork, and the rest of the forks
-// are initialized with the previous fork.
 int	ft_fork_init(t_data *data)
 {
 	int	i;
@@ -29,7 +27,7 @@ int	ft_fork_init(t_data *data)
 	while (i < data->philo_n)
 	{
 		pthread_mutex_init(&data->forks[i], NULL);
-		i++;
+		++i;
 	}
 	data->philos[0].left_fork = &data->forks[0];
 	data->philos[0].right_fork = &data->forks[data->philo_n - 1];
@@ -38,7 +36,7 @@ int	ft_fork_init(t_data *data)
 	{
 		data->philos[i].left_fork = &data->forks[i];
 		data->philos[i].right_fork = &data->forks[i - 1];
-		i++;
+		++i;
 	}
 	return (0);
 }
@@ -63,7 +61,7 @@ void	philos_init(t_data *data)
 		data->philos[i].eating = 0;
 		data->philos[i].status = 0;
 		pthread_mutex_init(&data->philos[i].lock, NULL);
-		i++;
+		++i;
 	}
 }
 

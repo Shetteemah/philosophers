@@ -6,7 +6,7 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:53:49 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/15 19:13:45 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/15 18:44:51 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ long int	ft_atoi(char *str)
 	neg = 1;
 	res = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		i++;
+		++i;
 	if (str[i] == '-')
 		neg = -1;
 	if (str[i] == '-' || str[i] == '+')
-		i++;
+		++i;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + str[i] - '0';
-		i++;
+		++i;
 	}
 	if (str[i] != '\0')
 		return (0);
@@ -48,15 +48,15 @@ int	ft_strnumeric(char *str)
 
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		i++;
+		++i;
 	while (str[i])
 	{
 		if (str[i] == '-' || str[i] == '+')
-			i++;
+			++i;
 		if (str[i] == '\0')
 			return (0);
 		if (str[i] >= 48 && str[i] <= 57)
-			i++;
+			++i;
 		else
 			return (0);
 	}
@@ -72,7 +72,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 	i = 0;
 	while (s1[i] == s2[i] && s1[i])
-		i++;
+		++i;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
@@ -86,7 +86,7 @@ char	*ft_putstr(char *str)
 	while (str[i])
 	{
 		write(1, &str[i], 1);
-		i++;
+		++i;
 	}
 	return (str);
 }
