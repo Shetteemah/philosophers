@@ -6,7 +6,7 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 02:51:22 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/16 10:14:42 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/17 21:40:34 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 // which initializes the mutex. It takes the pointer that points to the mutex
 // (data->forks) and a pointer to the mutex attributes (NULL) as arguments. If
 // the mutex attributes are NULL, the default mutex attributes are used, if not,
-// the mutex attributes are used. The function returns 0 if the mutex is
-// initialized, and 1 if not.
+// the mutex attributes are used.
 int	ft_fork_init(t_data *data)
 {
 	int	i;

@@ -6,17 +6,11 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 02:52:01 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/17 18:36:13 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/17 21:36:40 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-// this program creates one fork for each philosopher by initializing the mutex
-// for each fork. The first fork is initialized with the last fork, meaning that
-// the first philosopher will use the last fork as its right fork, and the last
-// and the rest
-// of the forks are initialized with the previous fork.
 
 // ft_get_time is a function that returns the current time in milliseconds 
 // using the gettimeofday function, which is a function that returns the current

@@ -6,7 +6,7 @@
 /*   By: sheali <sheali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 02:07:57 by sheali            #+#    #+#             */
-/*   Updated: 2023/01/15 18:45:19 by sheali           ###   ########.fr       */
+/*   Updated: 2023/01/17 21:39:40 by sheali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@
 // It uses the ft_strcmp function to compare the strings (DIED and str) and if
 // they are equal, it will print the message and set the data->dead variable
 // to 1, which means that the simulation is over.
-// write is a mutex that is used to write to the terminal. It is locked before
-// printing the message and unlocked after printing the message. This is done
-// to avoid the messages from being mixed up.
-// Before printing the message, it locks the mutex to write to the terminal.
-// After printing the message, it unlocks the mutex to write to the terminal.
-// If the data->dead variable is equal to 1, it will not print the message.
-// If the string is not equal to the DIED string, it will print the message.
 void	print_message(char *str, t_philo *philo)
 {
 	long long	time;
@@ -57,10 +50,6 @@ void	take_forks(t_philo *philo)
 // The philosoper will drop the forks after eating. This is done to allow other
 // philosophers to eat. If the philosopher does not drop the forks, the other
 // philosophers will not be able to eat. This will cause a deadlock.
-// It also prints the message SLEEPING by using the print_message function to
-// print the corresponding message of SLEEPING.
-// It also uses the ft_usleep function to sleep for the time specified in the
-// data->time_to_sleep variable.
 void	drop_forks(t_philo *philo)
 {
 	pthread_mutex_unlock(philo->left_fork);
@@ -72,9 +61,8 @@ void	drop_forks(t_philo *philo)
 // ft_chow is a function that is used to make the philosopher eat. It uses the
 // take_forks function to lock the forks. It also uses the drop_forks function
 // to unlock the forks. It also uses the print_message function to print the
-// message EATING.
-// It also uses the ft_usleep function to sleep for the time specified in the
-// data->time_to_eat variable.
+// message EATING. It also uses the ft_usleep function to sleep for the time
+// specified in the data->time_to_eat variable.
 void	ft_chow(t_philo *philo)
 {
 	take_forks(philo);
