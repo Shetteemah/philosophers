@@ -29,7 +29,7 @@ Navigate to the directory and run make
 
 ## Running the simulation
 
-The program takes command line arguments for the number of philosophers,the amount of time for which a philosopher can die, eat, and sleep. Optionally you may specify the maximum number of times a philosopher can eat.
+The program takes command line arguments for the number of philosophers, the amount of time for which a philosopher can die, eat, and sleep. Optionally you may specify the maximum number of times a philosopher can eat.
    ```sh
    ./philo [number of philosophers] [time to die] [time to eat] [time to sleep] [max number of time a philosopher can eat]
    ```
